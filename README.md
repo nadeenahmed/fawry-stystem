@@ -118,3 +118,52 @@ Input: transaction id
 
 example: POST/Admin/reject?id=MobileWe1
 
+The admin should be able to sign up to the system.
+
+13- POST/Admin/signup
+A service to sign up the admin. This service returns Added successfully if the admin didn’t exist before, if the admin exists it asks the admin to log in.
+Input: admin name, email, password, id
+
+example: {
+    "adminName":"Toka",
+    "email":"Toka@gmail.com",
+    "password":"123",
+    "id":1
+}
+
+The admin should be able to log in to the system.
+
+14- POST/Admin/login
+A service to sign up the admin. This service returns logged in successfully if the admin existed before, if the admin didn’t exist it asks the admin to sign up first.
+Input: admin name, email, password, id
+
+example:{
+    "adminName":"Mai",
+    "email":"Mai@gmail.com",
+    "password":"123",
+    "id":2
+}
+
+The admin should be able to view a user by email
+
+15-GET/User/{email}
+A service to view user by email. This service returns the user info
+Input:no input
+
+example: GET/User/Nadeen@gmail.com
+
+The admin should be able to view an admin by email
+
+16-GET/Admin/{email}
+A service to view admin by email. This service returns the admin info
+Input:no input
+
+example: GET/Admin/Toka@gmail.com
+
+The user should be able to check the status of his refund request
+
+17-POST/User/check
+A service to check if a refund request is approved or rejected . This service returns request status.
+Input: transaction id
+
+example: POST/User/check?id=MobileWe1
